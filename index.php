@@ -5,8 +5,9 @@
   <meta charset="utf-8">
 
   <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <meta name="description" content="Where do you want to be?">
+  <meta name="author" content="Anonymous Tiger">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
 
   <link type="text/css" rel="stylesheet" media="all" href="assets/css/jquery.mmenu.css" />
 <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
@@ -17,18 +18,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpCZg9odVngPubFm4-F22a1k2lVzpRSOY&sensor=true">
     </script>
    <script src="assets/js/main.js"></script>
-   <style type="text/css">
-		   html { height: 100%;width: 100%; }
-		   
-		  body { height: 100%;width: 100%; margin: 0; padding: 0 }
-			a:hover, a:visited, a:link, a:active
-			{
-				text-decoration: none;
-			}
-			#page{ height: 100% }
-			#content { height: 100%;padding:0px; }
-			 #map-canvas { height: 100% }
-	</style>
+ 
 </head>
 
 <body>
@@ -39,7 +29,9 @@
 			</div>
 			<div id="content">
 				<div id="map-canvas"/>
+				
 			</div>
+			<div style="width:100px;height:100px;border:red 1px solid;background-color:red;"></div>
 			<nav id="menu">
 				<ul>
 					<li><a href="#">Tours</a></li>
