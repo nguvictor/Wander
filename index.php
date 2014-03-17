@@ -8,16 +8,14 @@
   <meta name="description" content="Where do you want to be?">
   <meta name="author" content="Anonymous Tiger">
   <meta name="viewport" content="width=device-width, user-scalable=no" />
+  
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
   <link type="text/css" rel="stylesheet" media="all" href="assets/css/jquery.mmenu.css" />
 <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
    
-   <script type="text/javascript" src="assets/js/jquery.mmenu.js"></script>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpCZg9odVngPubFm4-F22a1k2lVzpRSOY&sensor=true">
-    </script>
-   <script src="assets/js/main.js"></script>
+   
  
 </head>
 
@@ -40,5 +38,10 @@
 				</ul>
 			</nav>
 		</div>
+		
+<script type="text/javascript" src="assets/js/jquery.mmenu.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpCZg9odVngPubFm4-F22a1k2lVzpRSOY&sensor=true"></script>
+<script src="assets/js/main.js"></script>		
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
