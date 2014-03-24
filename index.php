@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>Wander</title>
   <meta name="description" content="Where do you want to be?">
   <meta name="author" content="Anonymous Tiger">
   <meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -20,24 +20,27 @@
 </head>
 
 <body>
-   <div id="page">
-			<div id="header">
-				<a href="#menu"></a>
+   <div class="container">
+			<div id="header" class="row">
+                            <div class="col-xs-12">
+				<a href="#menu">MENu</a>
 				Wander
+                            </div>
 			</div>
-			<div id="content">
-				<div id="map-canvas"/>
+			<div id="content" class="row">
+				<div class="col-xs-12" id="map-canvas"></div>
 				
 			</div>
-			<div style="width:100px;height:100px;border:red 1px solid;background-color:red;"></div>
+			
 			<nav id="menu">
 				<ul>
-					<li><a href="#">Tours</a></li>
-					<li><a href="#">My Locations</a></li>
-					<li><a href="#">Points Of Interest</a></li>
+					<li><a href="#">Find</a></li>
+					<li><a href="#">Popular</a></li>
+					<li><a href="#">Near</a></li>
 				</ul>
 			</nav>
 		</div>
+       </div>
 		
 <script type="text/javascript" src="assets/js/jquery.mmenu.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpCZg9odVngPubFm4-F22a1k2lVzpRSOY&sensor=true"></script>

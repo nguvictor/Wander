@@ -5,8 +5,9 @@ var main = {
 	marker : null,
 	initialize : function(){
 		main.mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 15
+          center: new google.maps.LatLng(43.652527,-79.381961),
+          zoom: 15,
+          disableDefaultUI: true
         };
         main.map = new google.maps.Map(document.getElementById("map-canvas"), main.mapOptions);
 			 // Try HTML5 geolocation
@@ -74,7 +75,7 @@ var main = {
 			map: main.map
 		  });
 		}
-                $('#header').text("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
+                //$('#header').text("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
                 console.log("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
 		// Center the map on the new position
 		main.map.setCenter(newPoint);
