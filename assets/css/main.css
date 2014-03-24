@@ -18,7 +18,7 @@ html,body{height:100%;}
 .wander-icon{
     background-image:url('../img/wander-icon-white.png');
     background-repeat:no-repeat;
-    background-size: 25% auto;
+    background-size: auto 100%;
     background-position:center; 
 }
 #header{
