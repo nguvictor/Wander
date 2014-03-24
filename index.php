@@ -35,9 +35,9 @@
 
                 <nav id="menu">
                     <ul>
-                        <li><a href="#">Find</a></li>
-                        <li><a href="#">Popular</a></li>
-                        <li><a href="#">Near</a></li>
+                        <li><a href="#"><img src="assets/img/searchbutton.png"/>Find</a></li>
+                        <li><a href="#"><img src="assets/img/mostpopular.png"/>Popular</a></li>
+                        <li><a href="#"><img src="assets/img/toursnearme.png"/>Near</a></li>
                     </ul>
                 </nav>
             </div>
