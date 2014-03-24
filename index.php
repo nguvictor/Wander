@@ -13,7 +13,7 @@
 
         <link type="text/css" rel="stylesheet" media="all" href="assets/css/jquery.mmenu.all.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.all.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 
 
@@ -44,7 +44,7 @@
 
         
 
-        <script type="text/javascript" src="assets/js/jquery.mmenu.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.mmenu.min.all.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpCZg9odVngPubFm4-F22a1k2lVzpRSOY&sensor=true"></script>
         <script src="assets/js/main.js"></script>		
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
