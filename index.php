@@ -11,9 +11,9 @@
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
-        <link type="text/css" rel="stylesheet" media="all" href="assets/css/jquery.mmenu.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="assets/css/jquery.mmenu.all.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.all.js"></script>
 
 
 
@@ -21,7 +21,7 @@
 
     <body>
         
-            <div class="container">
+            <div id="main" class="container">
                 <div id="header" class="row">
                     <div class="col-xs-12 header-background">
                         <a href="#menu"class="col-xs-1">Menu</a>

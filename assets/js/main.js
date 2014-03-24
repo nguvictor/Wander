@@ -117,7 +117,8 @@ $(document).ready(function(){
 			handleNoGeolocation(false);
 		  }
       }*/
-     $('nav#menu').mmenu();
+     $('nav#menu').mmenu({position: "right",
+         zposition: "front",moveBackground:false},{menuWrapperSelector:"content"});
       google.maps.event.addDomListener(window, 'load', main.initialize);
 
 });
