@@ -10,28 +10,36 @@ var main = {
         };
         main.map = new google.maps.Map(document.getElementById("map-canvas"), main.mapOptions);
 			 // Try HTML5 geolocation
-			 /*
-		  if(navigator.geolocation) {
+                         
+			 main.accessGeolocation();
+		  
+	},
+        accessGeolocation: function(){
+            alert("Accessing GPS");
+            if(navigator.geolocation) {
+                alert("Working");
 			navigator.geolocation.getCurrentPosition(function(position) {
 			  var pos = new google.maps.LatLng(position.coords.latitude,
 											   position.coords.longitude);
 
 			  var infowindow = new google.maps.InfoWindow({
-				map: map,
+				map: main.map,
 				position: pos,
 				content: 'You are here.'
 			  });
-
-			  map.setCenter(pos);
+                          main.updateLocation();
+			  main.map.setCenter(pos);
 			}, function() {
-			  this.handleNoGeolocation(true);
+			  main.handleNoGeolocation(true);
+                          
 			});
 		  } else {
+                      alert("Not Working");
 			// Browser doesn't support Geolocation
-			this.handleNoGeolocation(false);
-		  }*/
-		  main.updateLocation();
-	},
+			main.handleNoGeolocation(false);
+		  }
+		  
+        },
 	handleNoGeolocation : function(errorFlag) {
 		if (errorFlag) {
 		var content = 'Error: The Geolocation service failed.';
@@ -44,18 +52,20 @@ var main = {
 		position: new google.maps.LatLng(60, 105),
 		content: content
 		};
+                
 
 		var infowindow = new google.maps.InfoWindow(options);
 		main.map.setCenter(options.position);
+                alert(content);
 	},
 	updateLocation : function() {
+                console.log("updateLocation");
 		navigator.geolocation.getCurrentPosition(function(position) {  
-		var newPoint = new google.maps.LatLng(position.coords.latitude, 
-											  position.coords.longitude);
-
+		var newPoint = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+                                                                                  
 		if (main.marker) {
 		  // Marker already created - Move it
-		  marker.setPosition(newPoint);
+		  main.marker.setPosition(newPoint);
 		}
 		else {
 		  // Marker does not exist - Create it
@@ -64,12 +74,13 @@ var main = {
 			map: main.map
 		  });
 		}
-
+                $('#header').text("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
+                console.log("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
 		// Center the map on the new position
 		main.map.setCenter(newPoint);
 		}); 
 		// Call the autoUpdate() function every 1 seconds
-		setTimeout(main.autoUpdate, 1000);
+		setTimeout(main.updateLocation, 1000);
 	}
 
 }
@@ -105,6 +116,7 @@ $(document).ready(function(){
 			handleNoGeolocation(false);
 		  }
       }*/
+     $('nav#menu').mmenu();
       google.maps.event.addDomListener(window, 'load', main.initialize);
 
 });
