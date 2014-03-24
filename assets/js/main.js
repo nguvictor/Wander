@@ -15,9 +15,9 @@ var main = {
 		  
 	},
         accessGeolocation: function(){
-            alert("Accessing GPS");
+       
             if(navigator.geolocation) {
-                alert("Working");
+            
 			navigator.geolocation.getCurrentPosition(function(position) {
 			  var pos = new google.maps.LatLng(position.coords.latitude,
 											   position.coords.longitude);
@@ -56,7 +56,7 @@ var main = {
 
 		var infowindow = new google.maps.InfoWindow(options);
 		main.map.setCenter(options.position);
-                alert(content);
+                
 	},
 	updateLocation : function() {
                 console.log("updateLocation");
