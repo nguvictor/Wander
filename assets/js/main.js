@@ -75,7 +75,9 @@ var main = {
 			map: main.map
 		  });
 		}
-                //$('#header').text("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
+                $('#long').text(position.coords.latitude.toFixed(7));
+                $('#lat').text(position.coords.longitude.toFixed(7));
+                
                 console.log("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
 		// Center the map on the new position
 		main.map.setCenter(newPoint);
@@ -117,8 +119,7 @@ $(document).ready(function(){
 			handleNoGeolocation(false);
 		  }
       }*/
-     $('nav#menu').mmenu({position: "right",
-         zposition: "front",moveBackground:false},{menuWrapperSelector:"content"});
+     $('nav#menu').mmenu({moveBackground:false},{menuWrapperSelector:"#main"});
       google.maps.event.addDomListener(window, 'load', main.initialize);
 
 });

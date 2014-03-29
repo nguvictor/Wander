@@ -35,10 +35,12 @@
 
                 <nav id="menu">
                     <ul>
-                        <li><a href="#"><img src="assets/img/searchbutton.png"/>Find</a></li>
-                        <li><a href="#"><img src="assets/img/mostpopular.png"/>Popular</a></li>
-                        <li><a href="#"><img src="assets/img/toursnearme.png"/>Near</a></li>
+                        <li><a href="#"><img class="col-sm-3" src="assets/img/searchbutton.png"/><span  class="col-sm-3" >Find</span></a></li>
+                        <li><a href="#"><img class="col-sm-3" src="assets/img/mostpopular.png"/>Popular</a></li>
+                        <li><a href="#"><img class="col-sm-3" src="assets/img/toursnearme.png"/>Near</a></li>
+                        <li><a href="#"><p>Long: <span id="long"></span></p><p>Lat: <span id="lat"></span></p></a></li>
                     </ul>
+                   
                 </nav>
             </div>
 
