@@ -30,12 +30,21 @@
                 </div>
                 <div id="content" class="row">
                     <div class="col-xs-12 fill" id="map-canvas"></div>
+					<div class="col-xs-12 fill" style="display:none" id="findPage">
+						The find Page
+					</div>
+					<div class="col-xs-12 fill" style="display:none" id="popularPage">
+						The popular Page
+					</div>
+					<div class="col-xs-12 fill" style="display:none" id="nearbyPage">
+						the nearby page
+					</div>
 
                 </div>
 
                 <nav id="menu">
                     <ul>
-                        <li><a href="#"><img class="col-sm-3" src="assets/img/searchbutton.png"/><span  class="col-sm-3" >Find</span></a></li>
+                        <li><a href="#"><img class=" col-sm-3" src="assets/img/searchbutton.png"/><span  class="col-sm-3" >Find</span></a></li>
                         <li><a href="#"><img class="col-sm-3" src="assets/img/mostpopular.png"/>Popular</a></li>
                         <li><a href="#"><img class="col-sm-3" src="assets/img/toursnearme.png"/>Near</a></li>
                         <li><a href="#"><p>Long: <span id="long"></span></p><p>Lat: <span id="lat"></span></p></a></li>
