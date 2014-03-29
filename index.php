@@ -44,10 +44,10 @@
 
                 <nav id="menu">
                     <ul>
-                        <li><a href="#"><img class=" col-sm-3" src="assets/img/searchbutton.png"/><span  class="col-sm-3" >Find</span></a></li>
-                        <li><a href="#"><img class="col-sm-3" src="assets/img/mostpopular.png"/>Popular</a></li>
-                        <li><a href="#"><img class="col-sm-3" src="assets/img/toursnearme.png"/>Near</a></li>
-                        <li><a href="#"><p>Long: <span id="long"></span></p><p>Lat: <span id="lat"></span></p></a></li>
+                        <li><a id="findButton" href="#"><img class=" col-sm-3" src="assets/img/searchbutton.png"/><span  class="col-sm-3" >Find</span></a></li>
+                        <li><a id="popularButton" href="#"><img class="col-sm-3" src="assets/img/mostpopular.png"/>Popular</a></li>
+                        <li><a id="nearbyButton" href="#"><img class="col-sm-3" src="assets/img/toursnearme.png"/>Near</a></li>
+                        <li><a id="nearbyButton" href="#"><p>Long: <span id="long"></span></p><p>Lat: <span id="lat"></span></p></a></li>
                     </ul>
                    
                 </nav>
