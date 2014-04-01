@@ -87,6 +87,26 @@ var main = {
 	}
 
 }
+function find(value){
+	$('#livesearch').children().remove();
+	$.ajax({
+	  url: "./getLocations.php",
+	  data: { name: value},
+	}).done(function(result) {
+		
+		result = jQuery.parseJSON(result);
+		console.log(result);
+		if(result.length > 0){
+			$.each(result, function( index, value ) {
+				//alert( index + ": " + value );
+				//console.log(value);
+				$('#livesearch').append('<div class="result-item">'+value.name+' '+ value.description+'</div>');
+			});
+		}else{
+			$('#livesearch').append('<div class="result-item">Nothing was found!</div>');
+		}
+	});
+}
 
 
 $(document).ready(function(){

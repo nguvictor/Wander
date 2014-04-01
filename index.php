@@ -31,7 +31,11 @@
                 <div id="content" class="row">
                     <div class="col-xs-12 fill" id="map-canvas"></div>
 					<div class="col-xs-12 fill" style="display:none" id="findPage">
-						The find Page
+						<form>
+							<input type="text" size="30" onkeyup="find(this.value)">
+							
+						</form>
+						<div id="livesearch"></div>
 					</div>
 					<div class="col-xs-12 fill" style="display:none" id="popularPage">
 						The popular Page
