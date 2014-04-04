@@ -28,7 +28,7 @@
             <div id="header" class="row">
                 <div class="col-xs-12 header-background">
 
-                    <button id="showLeft" class="col-xs-1">Menu</button>
+                    <a id="showLeft" class="col-xs-1" style="background: none;border: none;outline:none;"><img class="ol-xs-12" style="height: 40px;" src="assets/img/menubutton.png"/></a>
                     <div id="logo" class= "wander-icon col-xs-2 col-xs-offset-4"></div>
                 </div>
             </div>

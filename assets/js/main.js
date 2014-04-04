@@ -102,7 +102,8 @@ function find(value){
             $.each(result, function( index, value ) {
                 //alert( index + ": " + value );
                 //console.log(value);
-                $('#livesearch').append('<div class="result-item">'+value.name+' '+ value.description+'</div>');
+                $('#livesearch').append('<div class="result-item" >'+value.name+' '+ value.description+'</div>');
+                $( "#livesearch:last-child" ).toggle( "slide",{ direction: "down" } );
             });
         }else{
             $('#livesearch').append('<div class="result-item">Nothing was found!</div>');
