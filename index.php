@@ -15,6 +15,7 @@
     <body class="cbp-spmenu-push">
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
             <h3>Menu</h3>
+            <a id="mapButton" href="#"><img class=" col-xs-3" src="assets/img/mapbutton.png"/>Map</a>
             <a id="findButton" href="#"><img class=" col-xs-3" src="assets/img/searchbutton.png"/>Find</a>
             <a id="popularButton" href="#"><img class=" col-xs-3" src="assets/img/mostpopular.png"/>Popular</a>
             <a id="nearbyButton" href="#"><img class=" col-xs-3" src="assets/img/toursnearme.png"/>Near</a>

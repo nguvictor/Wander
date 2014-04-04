@@ -141,6 +141,7 @@ $(document).ready(function(){
       }*/
     
      //$('nav#menu').mmenu({moveBackground:false},{menuWrapperSelector:"#main"});
+        $('#mapButton').click(function(){ $("#content").children().hide(); $('#map-canvas').slideDown();});
 	 $('#findButton').click(function(){ $("#content").children().hide(); $('#findPage').slideDown();});
 	 $('#popularButton').click(function(){$("#content").children().hide(); $('#popularPage').slideDown(); });
 	 $('#nearbyButton').click(function(){$("#content").children().hide(); $('#nearbyPage').slideDown(); });
