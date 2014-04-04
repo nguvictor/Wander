@@ -80,7 +80,7 @@ var main = {
             main.map.setCenter(newPoint);
         }); 
         // Call the autoUpdate() function every 1 seconds
-        setTimeout(main.updateLocation, 1000);
+        setTimeout(main.updateLocation, 250);
     }
 
 }
