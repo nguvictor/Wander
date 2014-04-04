@@ -140,12 +140,75 @@ $(document).ready(function(){
 		  }
       }*/
     
-     //$('nav#menu').mmenu({moveBackground:false},{menuWrapperSelector:"#main"});
-        $('#mapButton').click(function(){ $("#content").children().hide(); $('#map-canvas').slideDown();});
-	 $('#findButton').click(function(){ $("#content").children().hide(); $('#findPage').slideDown();});
-	 $('#popularButton').click(function(){$("#content").children().hide(); $('#popularPage').slideDown(); });
-	 $('#nearbyButton').click(function(){$("#content").children().hide(); $('#nearbyPage').slideDown(); });
-         
+    //$('nav#menu').mmenu({moveBackground:false},{menuWrapperSelector:"#main"});
+    $('#mapButton').click(function(){
+        $("#content").children().hide();
+        $('#map-canvas').slideDown();
+        classie.toggle( this, 'active' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeft' );
+    });
+    $('#findButton').click(function(){
+        $("#content").children().hide();
+        $('#findPage').slideDown();
+        classie.toggle( this, 'active' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeft' );    
+    });
+    $('#popularButton').click(function(){
+        $("#content").children().hide();
+        $('#popularPage').slideDown();
+        classie.toggle( this, 'active' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeft' );
+    });
+    $('#nearbyButton').click(function(){
+        $("#content").children().hide();
+        $('#nearbyPage').slideDown();
+        classie.toggle( this, 'active' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeft' );
+    });
+        
+            var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+            menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+            menuTop = document.getElementById( 'cbp-spmenu-s3' ),
+            menuBottom = document.getElementById( 'cbp-spmenu-s4' ),
+            showLeft = document.getElementById( 'showLeft' ),
+            showRight = document.getElementById( 'showRight' ),
+            showTop = document.getElementById( 'showTop' ),
+            showBottom = document.getElementById( 'showBottom' ),
+            showLeftPush = document.getElementById( 'showLeftPush' ),
+            showRightPush = document.getElementById( 'showRightPush' ),
+            body = document.body;
+
+            showLeft.onclick = function() {
+                classie.toggle( this, 'active' );
+                classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                disableOther( 'showLeft' );
+            };
+            
+            function disableOther( button ) {
+                if( button !== 'showLeft' ) {
+                    classie.toggle( showLeft, 'disabled' );
+                }
+                if( button !== 'showRight' ) {
+                    classie.toggle( showRight, 'disabled' );
+                }
+                if( button !== 'showTop' ) {
+                    classie.toggle( showTop, 'disabled' );
+                }
+                if( button !== 'showBottom' ) {
+                    classie.toggle( showBottom, 'disabled' );
+                }
+                if( button !== 'showLeftPush' ) {
+                    classie.toggle( showLeftPush, 'disabled' );
+                }
+                if( button !== 'showRightPush' ) {
+                    classie.toggle( showRightPush, 'disabled' );
+                }
+            }
+        
       google.maps.event.addDomListener(window, 'load', main.initialize);
 
 });
