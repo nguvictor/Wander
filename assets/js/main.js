@@ -23,11 +23,7 @@ var main = {
                 var pos = new google.maps.LatLng(position.coords.latitude,
                     position.coords.longitude);
 
-                var infowindow = new google.maps.InfoWindow({
-                    map: main.map,
-                    position: pos,
-                    content: 'You are here.'
-                });
+              
                 main.updateLocation();
                 main.map.setCenter(pos);
             }, function() {
@@ -72,6 +68,7 @@ var main = {
                 // Marker does not exist - Create it
                 main.marker = new google.maps.Marker({
                     position: newPoint,
+                    icon: "assets/img/marker.png",
                     map: main.map
                 });
             }
