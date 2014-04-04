@@ -176,6 +176,7 @@ $(document).ready(function(){
     $('#mapButton').click(function(){
         $("#content").children().hide();
         $('#map-canvas').slideDown();
+        google.maps.event.trigger(main.map, "resize");
         classie.toggle( this, 'active' );
         classie.toggle( menuLeft, 'cbp-spmenu-open' );
         disableOther( 'showLeft' );
