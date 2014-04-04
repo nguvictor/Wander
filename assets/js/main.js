@@ -139,10 +139,12 @@ $(document).ready(function(){
 			handleNoGeolocation(false);
 		  }
       }*/
+    /*
      $('nav#menu').mmenu({moveBackground:false},{menuWrapperSelector:"#main"});
 	 $('#findButton').click(function(){ $("#content").children().hide(); $('#findPage').slideDown();});
 	 $('#popularButton').click(function(){$("#content").children().hide(); $('#popularPage').slideDown(); });
 	 $('#nearbyButton').click(function(){$("#content").children().hide(); $('#nearbyPage').slideDown(); });
+         */
       google.maps.event.addDomListener(window, 'load', main.initialize);
 
 });
