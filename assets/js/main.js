@@ -3,7 +3,7 @@ var main = {
     map : null,
     that : this,
     marker : null,
-    locations : null,
+    locations : [],
     initialize : function(){
         main.mapOptions = {
             center: new google.maps.LatLng(43.652527,-79.381961),
@@ -57,7 +57,7 @@ var main = {
                 
     },
     updateLocation : function() {
-        console.log("updateLocation");
+        //console.log("updateLocation");
         navigator.geolocation.getCurrentPosition(function(position) {  
             var newPoint = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
                                                                                   
@@ -76,7 +76,7 @@ var main = {
             $('#long').text(position.coords.latitude.toFixed(7));
             $('#lat').text(position.coords.longitude.toFixed(7));
                 
-            console.log("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
+            //console.log("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
             // Center the map on the new position
             main.map.setCenter(newPoint);
         }); 
@@ -92,22 +92,20 @@ var main = {
         }).done(function(result) {
 
             result = jQuery.parseJSON(result);
-            console.log(result);
+            //console.log(result);
             if(result.length > 0){
                 $.each(result, function( index, value ) {
                     //alert( index + ": " + value );
                     //console.log(value);
-                    $('#livesearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
-                    $( "#livesearch:last-child" ).toggle( "slide",{
-                        direction: "down"
-                    } );
-                    $('.result-item').click(function(){
-                        console.log($(this).attr("data-user"));
-                    });
+                    main.locations.push(value);
+                });
+                main.locations.sort(function(a, b) { 
+                    return a.id - b.id  ||  a.id.localeCompare(b.id);
                 });
             }else{
                 $('#livesearch').append('<div class="result-item">Nothing was found!</div>');
             }
+            
         });
     }
 

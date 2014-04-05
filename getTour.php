@@ -2,8 +2,8 @@
 //Get tour info from id -  Victor
 include "dbConfig.php";
 $con=mysqli_connect($location,$user,$pass,$db);
-$id = mysqli_real_escape_string ($con, $_GET['name']);
-$result = mysqli_query($con,"SELECT * FROM tour WHERE id= '.$id.'");
+$id = mysqli_real_escape_string ($con, $_GET['id']);
+$result = mysqli_query($con,"SELECT * FROM tour WHERE id= $id");
 $data = array();
 $count = 0;
 while($row = mysqli_fetch_array($result))
