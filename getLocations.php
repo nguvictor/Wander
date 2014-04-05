@@ -1,7 +1,7 @@
 <?php
 include "dbConfig.php";
 $con=mysqli_connect($location,$user,$pass,$db);
-$name = $_GET['name'];
+$name = mysqli_real_escape_string ($con, $_GET['name']);
 $result = mysqli_query($con,"SELECT * FROM tour WHERE LOWER(name) LIKE LOWER('%".$name."%')");
 $data = array();
 $count = 0;
