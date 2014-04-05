@@ -1,4 +1,5 @@
 <?php
+//Search and location tours with the name matching - Victor
 include "dbConfig.php";
 $con=mysqli_connect($location,$user,$pass,$db);
 $name = mysqli_real_escape_string ($con, $_GET['name']);
