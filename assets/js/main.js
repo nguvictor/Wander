@@ -84,6 +84,7 @@ var main = {
         setTimeout(main.updateLocation, 250);
     },
     findLocations : function (value){
+        main.locations = [];
         $.ajax({
             url: "./getTourLocations.php",
             data: {
@@ -103,7 +104,7 @@ var main = {
                     return a.id - b.id  ||  a.id.localeCompare(b.id);
                 });
             }else{
-                $('#livesearch').append('<div class="result-item">Nothing was found!</div>');
+                //$('#livesearch').append('<div class="result-item">Nothing was found!</div>');
             }
             
         });
@@ -130,7 +131,7 @@ function find(value){
                     direction: "down"
                 } );
                 $('.result-item').click(function(){
-                    console.log($(this).attr("data-user"));
+                    main.findLocations($(this).attr("data-user"));
                 });
             });
         }else{
