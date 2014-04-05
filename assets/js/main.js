@@ -90,7 +90,7 @@ function find(value){
         url: "./getLocations.php",
         data: {
             name: value
-        },
+        }
     }).done(function(result) {
 		
         result = jQuery.parseJSON(result);
@@ -99,8 +99,11 @@ function find(value){
             $.each(result, function( index, value ) {
                 //alert( index + ": " + value );
                 //console.log(value);
-                $('#livesearch').append('<div class="result-item" >'+value.name+' '+ value.description+'</div>');
+                $('#livesearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
                 $( "#livesearch:last-child" ).toggle( "slide",{ direction: "down" } );
+                $('.result-item').click(function(){
+                    console.log($(this).attr("data-user"));
+                });
             });
         }else{
             $('#livesearch').append('<div class="result-item">Nothing was found!</div>');
@@ -206,9 +209,10 @@ $(document).ready(function(){
         classie.remove( menuLeft, 'cbp-spmenu-open' );
         disableOther( 'showLeft' );
     });
+    
+    
         
            
-
     showLeft.onclick = function() {
         classie.toggle( this, 'active' );
         classie.toggle( menuLeft, 'cbp-spmenu-open' );
