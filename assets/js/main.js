@@ -4,6 +4,7 @@ var main = {
     that : this,
     marker : null,
     locations : [],
+    markers : [],
     initialize : function(){
         main.mapOptions = {
             center: new google.maps.LatLng(43.652527,-79.381961),
@@ -103,11 +104,22 @@ var main = {
                 main.locations.sort(function(a, b) { 
                     return a.id - b.id  ||  a.id.localeCompare(b.id);
                 });
+                main.startTour();
             }else{
                 //$('#livesearch').append('<div class="result-item">Nothing was found!</div>');
             }
             
         });
+    },
+    startTour : function(){ //Hide and put map up
+        $("#content").children().hide();
+        $('#map-canvas').slideDown();
+        google.maps.event.trigger(main.map, "resize");
+          $.each(main.locations, function( index, value ) {
+                var latlng =  new google.maps.LatLng(value.lat,value.lng);
+                main.markers.push(new google.maps.Marker({position: latlng,map:main.map,title:value.name}));
+          });
+        
     }
 
 }
