@@ -3,6 +3,7 @@ var main = {
     map : null,
     that : this,
     marker : null,
+    locations : null,
     initialize : function(){
         main.mapOptions = {
             center: new google.maps.LatLng(43.652527,-79.381961),
@@ -81,6 +82,33 @@ var main = {
         }); 
         // Call the autoUpdate() function every 1 seconds
         setTimeout(main.updateLocation, 250);
+    },
+    findLocations : function (value){
+        $.ajax({
+            url: "./getTourLocations.php",
+            data: {
+                id: value
+            }
+        }).done(function(result) {
+
+            result = jQuery.parseJSON(result);
+            console.log(result);
+            if(result.length > 0){
+                $.each(result, function( index, value ) {
+                    //alert( index + ": " + value );
+                    //console.log(value);
+                    $('#livesearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
+                    $( "#livesearch:last-child" ).toggle( "slide",{
+                        direction: "down"
+                    } );
+                    $('.result-item').click(function(){
+                        console.log($(this).attr("data-user"));
+                    });
+                });
+            }else{
+                $('#livesearch').append('<div class="result-item">Nothing was found!</div>');
+            }
+        });
     }
 
 }
@@ -100,7 +128,9 @@ function find(value){
                 //alert( index + ": " + value );
                 //console.log(value);
                 $('#livesearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
-                $( "#livesearch:last-child" ).toggle( "slide",{ direction: "down" } );
+                $( "#livesearch:last-child" ).toggle( "slide",{
+                    direction: "down"
+                } );
                 $('.result-item').click(function(){
                     console.log($(this).attr("data-user"));
                 });
@@ -110,6 +140,8 @@ function find(value){
         }
     });
 }
+
+
 var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 menuRight = document.getElementById( 'cbp-spmenu-s2' ),
 menuTop = document.getElementById( 'cbp-spmenu-s3' ),
