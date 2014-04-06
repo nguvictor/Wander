@@ -138,11 +138,13 @@ function find(value){
             $.each(result, function( index, value ) {
                 //alert( index + ": " + value );
                 //console.log(value);
-                $('#livesearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
-                $( "#livesearch:last-child" ).toggle( "slide",{
+                var that = $('<div class="row result-item" style="display:none"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
+                $('#livesearch').append(that);
+                that.toggle( "slide",{
                     direction: "down"
                 } );
-                $('.result-item').click(function(){
+                
+                that.click(function(){
                     main.findLocations($(this).attr("data-user"));
                 });
             });
@@ -169,8 +171,9 @@ function findNearby(){
             $.each(result, function( index, value ) {
                 //alert( index + ": " + value );
                 //console.log(value);
-                $('#nearbySearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
-                $( "#nearbySearch:last-child" ).toggle( "slide",{
+                var that = $('<div class="row result-item" style="display:none"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
+                $('#nearbySearch').append(that);
+                that.toggle( "slide",{
                     direction: "down"
                 } );
                 $('.result-item').click(function(){
@@ -200,8 +203,10 @@ function findPopular(){
             $.each(result, function( index, value ) {
                 //alert( index + ": " + value );
                 //console.log(value);
-                $('#popularSearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
-                $( "#popularSearch:last-child" ).toggle( "slide",{
+                //$('#popularSearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
+                var that = $('<div class="row result-item" style="display:none"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
+                $('#popularSearch').append(that);
+                that.toggle( "slide",{
                     direction: "down"
                 } );
                 $('.result-item').click(function(){

@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
         <script src="assets/js/modernizr.custom.js"></script>
     </head>
     <body class="cbp-spmenu-push">
