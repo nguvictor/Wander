@@ -12,6 +12,9 @@ var main = {
             disableDefaultUI: true
         };
         main.map = new google.maps.Map(document.getElementById("map-canvas"), main.mapOptions);
+        
+    
+  
         // Try HTML5 geolocation
                          
         main.accessGeolocation();
@@ -88,6 +91,7 @@ var main = {
         main.locations = [];
         $.ajax({
             url: "./getTourLocations.php",
+            
             data: {
                 id: value
             }
@@ -120,6 +124,41 @@ var main = {
                 main.markers.push(new google.maps.Marker({position: latlng,map:main.map,title:value.name}));
           });
         
+    },
+     generateHud: function(controlDiv, map) {
+
+      // Set CSS styles for the DIV containing the control
+      // Setting padding to 5 px will offset the control
+      // from the edge of the map
+      controlDiv.style.padding = '5px';
+
+      // Set CSS for the control border
+      var controlUI = document.createElement('div');
+      controlUI.style.backgroundColor = 'white';
+      controlUI.style.borderStyle = 'solid';
+      controlUI.style.borderWidth = '2px';
+      controlUI.style.cursor = 'pointer';
+      //controlUI.style.bottom = '0px';
+      //controlUI.style.cursor = 'pointer';
+      controlUI.style.textAlign = 'center';
+      controlUI.title = 'Click to set the map to Home';
+      controlDiv.appendChild(controlUI);
+
+      // Set CSS for the control interior
+      var controlText = document.createElement('div');
+      controlText.style.fontFamily = 'Arial,sans-serif';
+      controlText.style.fontSize = '12px';
+      controlText.style.paddingLeft = '4px';
+      controlText.style.paddingRight = '4px';
+      controlText.innerHTML = '<b>Info</b>';
+      controlUI.appendChild(controlText);
+
+      // Setup the click event listeners: simply set the map to
+      // Chicago
+      google.maps.event.addDomListener(controlUI, 'click', function() {
+        map.setCenter(chicago)
+      });
+
     }
 
 }
@@ -144,8 +183,9 @@ function find(value){
                     direction: "down"
                 } );
                 
-                that.click(function(){
-                    main.findLocations($(this).attr("data-user"));
+                that.click(function(e){
+                    //console.log($(e.target).attr("data-user"));
+                    main.findLocations($(e.target).attr("data-user"));
                 });
             });
         }else{
@@ -176,8 +216,9 @@ function findNearby(){
                 that.toggle( "slide",{
                     direction: "down"
                 } );
-                $('.result-item').click(function(){
-                    main.findLocations($(this).attr("data-user"));
+                that.click(function(e){
+                    //console.log($(this).attr("data-user"));
+                    main.findLocations($(e.target).attr("data-user"));
                 });
             });
         }else{
@@ -209,8 +250,11 @@ function findPopular(){
                 that.toggle( "slide",{
                     direction: "down"
                 } );
-                $('.result-item').click(function(){
-                    main.findLocations($(this).attr("data-user"));
+                    that.click(function(e){
+                        
+                    //console.log($(this).attr("data-user"));
+             
+                    main.findLocations($(e.target).attr("data-user"));
                 });
             });
         }else{
@@ -286,7 +330,7 @@ $(document).ready(function(){
     //$('nav#menu').mmenu({moveBackground:false},{menuWrapperSelector:"#main"});
     $('#mapButton').click(function(){
         $("#content").children().hide();
-        $('#map-canvas').slideDown();
+        $('#mapPage').slideDown();
         google.maps.event.trigger(main.map, "resize");
         classie.toggle( this, 'active' );
         classie.toggle( menuLeft, 'cbp-spmenu-open' );

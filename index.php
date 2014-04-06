@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Wander</title>
+   
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
@@ -33,7 +34,13 @@
             </div>
             <div id="main" class="row fill">
                 <div id="content" class="row ">
-                    <div class="col-xs-12 fill" id="map-canvas"></div>
+                    <div class="col-xs-12 fill" style="padding:0px;" id="mapPage">
+                        <div class="col-xs-12 fill-90" id="map-canvas"></div>
+                        <div class="col-xs-12 fill-10">
+                            <img class=" col-xs-2" src="assets/img/pause.png"/></img>
+                            <img class=" col-xs-2 pull-right" src="assets/img/info.png"/></img>
+                        </div>
+                    </div>
                     <div class="col-xs-12 fill" style="display:none" id="findPage">
                         <div class="text-center" style="font-size: 40px;">
                             <form>
@@ -41,6 +48,7 @@
 
                             </form>
                             <div id="livesearch"></div>
+                            
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="popularPage">
