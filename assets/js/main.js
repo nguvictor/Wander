@@ -153,6 +153,68 @@ function find(value){
 }
 
 
+function findNearby(){
+    $('#nearbySearch').children().remove();
+    console.log("working!");
+    $.ajax({
+        url: "./findNearby.php",
+        data: {
+            id: ""
+        }
+    }).done(function(result) {
+		
+        result = jQuery.parseJSON(result);
+        console.log(result);
+        if(result.length > 0){
+            $.each(result, function( index, value ) {
+                //alert( index + ": " + value );
+                //console.log(value);
+                $('#nearbySearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
+                $( "#nearbySearch:last-child" ).toggle( "slide",{
+                    direction: "down"
+                } );
+                $('.result-item').click(function(){
+                    main.findLocations($(this).attr("data-user"));
+                });
+            });
+        }else{
+            $('#nearbySearch').append('<div class="result-item">Nothing was found!</div>');
+        }
+    });
+}
+
+
+function findPopular(){
+    $('#popularSearch').children().remove();
+    console.log("working!");
+    $.ajax({
+        url: "./findPopular.php",
+        data: {
+            id: ""
+        }
+    }).done(function(result) {
+		
+        result = jQuery.parseJSON(result);
+        console.log(result);
+        if(result.length > 0){
+            $.each(result, function( index, value ) {
+                //alert( index + ": " + value );
+                //console.log(value);
+                $('#popularSearch').append('<div class="row result-item"><img src="assets/img/thumb/'+value.thumb+'" class="col-xs-8 col-xs-offset-2" data-user="'+value.id+'"></img></div>');
+                $( "#popularSearch:last-child" ).toggle( "slide",{
+                    direction: "down"
+                } );
+                $('.result-item').click(function(){
+                    main.findLocations($(this).attr("data-user"));
+                });
+            });
+        }else{
+            $('#popularSearch').append('<div class="result-item">Nothing was found!</div>');
+        }
+    });
+}
+
+
 var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 menuRight = document.getElementById( 'cbp-spmenu-s2' ),
 menuTop = document.getElementById( 'cbp-spmenu-s3' ),
@@ -235,16 +297,20 @@ $(document).ready(function(){
     $('#popularButton').click(function(){
         $("#content").children().hide();
         $('#popularPage').slideDown();
+        findPopular();
         classie.toggle( this, 'active' );
         classie.toggle( menuLeft, 'cbp-spmenu-open' );
         disableOther( 'showLeft' );
+        
     });
     $('#nearbyButton').click(function(){
         $("#content").children().hide();
         $('#nearbyPage').slideDown();
+        findNearby();
         classie.toggle( this, 'active' );
         classie.toggle( menuLeft, 'cbp-spmenu-open' );
         disableOther( 'showLeft' );
+         
     });
     $('#main').click(function(){
 

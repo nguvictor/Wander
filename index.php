@@ -19,9 +19,7 @@
             <a id="findButton" href="#"><img class=" col-xs-3" src="assets/img/searchbutton.png"/>Find</a>
             <a id="popularButton" href="#"><img class=" col-xs-3" src="assets/img/mostpopular.png"/>Popular</a>
             <a id="nearbyButton" href="#"><img class=" col-xs-3" src="assets/img/toursnearme.png"/>Near</a>
-            <a href="#">Catsear azuki bean</a>
-            <a href="#">Dandelion bunya</a>
-            <a href="#">Rutabaga</a>
+            
         </nav>
 
         <div class="container">
@@ -45,10 +43,14 @@
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="popularPage">
-                        The popular Page
+                         <div class="text-center" style="font-size: 40px;">
+                            <div id="popularSearch"></div>
+                        </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="nearbyPage">
-                        the nearby page
+                         <div class="text-center" style="font-size: 40px;">
+                            <div id="nearbySearch"></div>
+                        </div>
                     </div>
 
                 </div>
