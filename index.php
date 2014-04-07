@@ -38,8 +38,8 @@
                     <div class="col-xs-12 fill" style="padding:0px;" id="mapPage">
                         <div class="col-xs-12 fill-90" id="map-canvas"></div>
                         <div class="col-xs-12 fill-10">
-                            <img class=" col-xs-2" src="assets/img/pause.png"/></img>
-                            <img class=" col-xs-2 pull-right" src="assets/img/info.png"/></img>
+                            <img id="pauseButton" class=" col-xs-2" src="assets/img/pause.png"/></img>
+                            <img id="infoButton" class=" col-xs-2 pull-right" src="assets/img/info.png"/></img>
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="findPage">
@@ -60,6 +60,11 @@
                     <div class="col-xs-12 fill" style="display:none" id="nearbyPage">
                          <div class="text-center" style="font-size: 40px;">
                             <div id="nearbySearch"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 fill" style="display:none" id="infoPage">
+                         <div class="text-center" style="font-size: 40px;">
+                            <div id="infoSearch"></div>
                         </div>
                     </div>
 

@@ -9,6 +9,7 @@ var main = {
     directionsService: null,
     currentPosition: 0, //The location on the tour
     currentLocation: null,
+    tourCompleted: false, //HAs the tour been completed?
     initialize : function(){
         main.mapOptions = {
             center: new google.maps.LatLng(43.652527,-79.381961),
@@ -193,7 +194,7 @@ var main = {
         });
     },
     checkLocation : function(location){//Expecting coordinates lat long -79.484948 46.6198495
-        if(main.locations.length > 0){
+        if(main.locations.length > 0 && !main.tourCompleted){
         var finalLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
 
         console.log("Checking distance:"+main.distance(main.currentLocation,finalLocation));
@@ -203,13 +204,28 @@ var main = {
             main.renderPath(main.currentLocation,newLocation);
             //If our poisiton is maxxed then we are done!
             if( main.currentPosition>=main.locations.length){
-
+                main.tourCompleted = true;
             }
         }
       }
     },
     distance : function(a,b){//Returns distance between two points, expects two latlng objects
         return google.maps.geometry.spherical.computeDistanceBetween(a, b);
+    },
+    getInfo: function(){
+        if(main.locations.length > 0){
+            
+            if(main.currentPosition == 0){
+                 var position = 0;
+            }else{
+                var position = main.currentPosition-1;
+            }
+            $("#content").children().hide();
+            $('#infoPage').slideDown();
+            $('#infoSearch').children().remove();
+            var that = $('<div class="row" style="color:white;">'+main.locations[position].name+"<br><br>"+main.locations[position].description+'</div>');
+            $('#infoSearch').append(that);
+        }
     }
 
 }
@@ -411,6 +427,9 @@ $(document).ready(function(){
         classie.toggle( menuLeft, 'cbp-spmenu-open' );
         disableOther( 'showLeft' );
          
+    });
+    $('#infoButton').click(function(){
+       main.getInfo();  
     });
     $('#main').click(function(){
 

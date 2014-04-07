@@ -83,7 +83,13 @@ html,body{height:100%;}
         -o-background-size: cover;
         background-size: cover;
 }
-
+#infoPage{
+		background: url('../img/background.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
 .result-item{
     
    
