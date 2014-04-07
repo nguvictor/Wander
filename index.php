@@ -12,6 +12,7 @@
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-Ii_y0iY1q51-OHDir1gYIkCI8UttW84&sensor=true&libraries=geometry"></script>
         <script src="assets/js/modernizr.custom.js"></script>
     </head>
     <body class="cbp-spmenu-push">

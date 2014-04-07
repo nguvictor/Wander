@@ -5,6 +5,9 @@ var main = {
     marker : null,
     locations : [],
     markers : [],
+    directionsRenderer: null,
+    directionsService: null,
+    currentPosition: 0, //The location on the tour
     initialize : function(){
         main.mapOptions = {
             center: new google.maps.LatLng(43.652527,-79.381961),
@@ -13,7 +16,13 @@ var main = {
         };
         main.map = new google.maps.Map(document.getElementById("map-canvas"), main.mapOptions);
         
-    
+        main.directionsRenderer = new google.maps.DirectionsRenderer();
+        main.directionsRenderer.setMap(main.map);
+        
+        main.directionsService = new google.maps.DirectionsService({
+            "suppressMarkers": true,
+            "avoidTolls": true
+        });
   
         // Try HTML5 geolocation
                          
@@ -117,7 +126,7 @@ var main = {
     },
     startTour : function(){ //Hide and put map up
         $("#content").children().hide();
-        $('#map-canvas').slideDown();
+        $('#mapPage').slideDown();
         google.maps.event.trigger(main.map, "resize");
           $.each(main.locations, function( index, value ) {
                 var latlng =  new google.maps.LatLng(value.lat,value.lng);
@@ -159,6 +168,41 @@ var main = {
         map.setCenter(chicago)
       });
 
+    },
+    renderPath : function(start, end){
+        var request = {
+            origin: start,
+            waypoints: null,
+            destination: end,
+            travelMode: google.maps.DirectionsTravelMode.WALKING,
+            unitSystem: google.maps.DirectionsUnitSystem.METRIC,
+            avoidTolls: true
+        };
+        main.directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                //var directionsRenderer2 = new google.maps.DirectionsRenderer({polylineOptions:{strokeColor: get_random_color()}});
+                //directionsRenderer2.setMap(main.map);
+                main.directionsRenderer.setDirections(response);
+            } else {
+                alert('Error: ' + status);
+            }
+        });
+    },
+    checkLocation : function(location){//Expecting coordinates lat long -79.484948 46.6198495
+      var finalLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
+      var currentLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      if(main.distance(currentLocation,finalLocation) < 10){ //We Reached our location!
+          main.currentPosition+=1;
+          var newLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
+          main.renderPath(currentLocation,finalLocation);
+          //If our poisiton is maxxed then we are done!
+          if( main.currentPosition>=main.locations.length){
+              
+          }
+      }
+    },
+    distance : function(a,b){//Returns distance between two points, expects two latlng objects
+        return google.maps.geometry.spherical.computeDistanceBetween(a, b);
     }
 
 }
