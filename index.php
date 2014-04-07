@@ -7,11 +7,14 @@
         <title>Wander</title>
    
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
         
         <script src="assets/js/modernizr.custom.js"></script>
     </head>
@@ -38,8 +41,8 @@
                     <div class="col-xs-12 fill" style="padding:0px;" id="mapPage">
                         <div class="col-xs-12 fill-90" id="map-canvas"></div>
                         <div class="col-xs-12 fill-10">
-                            <img id="pauseButton" class=" col-xs-2" src="assets/img/pause.png"/></img>
-                            <img id="infoButton" class=" col-xs-2 pull-right" src="assets/img/info.png"/></img>
+                            <img id="pauseButton" class="" style="height:95%;padding:2.5%;" src="assets/img/pause.png"/></img>
+                            <img id="infoButton" class=" pull-right" style="height:95%;padding:2.5%;"  src="assets/img/info.png"/></img>
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="findPage">

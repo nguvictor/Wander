@@ -197,7 +197,7 @@ var main = {
         if(main.locations.length > 0 && !main.tourCompleted){
         var finalLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
 
-        console.log("Checking distance:"+main.distance(main.currentLocation,finalLocation));
+        //console.log("Checking distance:"+main.distance(main.currentLocation,finalLocation));
         if(main.distance(main.currentLocation,finalLocation) < 25){ //We Reached our location!
             main.currentPosition+=1;
             var newLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
