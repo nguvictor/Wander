@@ -12,7 +12,7 @@
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-Ii_y0iY1q51-OHDir1gYIkCI8UttW84&sensor=true&libraries=geometry"></script>
+        
         <script src="assets/js/modernizr.custom.js"></script>
     </head>
     <body class="cbp-spmenu-push">
@@ -68,7 +68,7 @@
         </div>
         <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
         <script src="assets/js/classie.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpCZg9odVngPubFm4-F22a1k2lVzpRSOY&sensor=true"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpCZg9odVngPubFm4-F22a1k2lVzpRSOY&sensor=true&libraries=geometry"></script>
         <script src="assets/js/main.js"></script>		
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         

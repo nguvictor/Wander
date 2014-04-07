@@ -8,6 +8,7 @@ var main = {
     directionsRenderer: null,
     directionsService: null,
     currentPosition: 0, //The location on the tour
+    currentLocation: null,
     initialize : function(){
         main.mapOptions = {
             center: new google.maps.LatLng(43.652527,-79.381961),
@@ -73,10 +74,11 @@ var main = {
         //console.log("updateLocation");
         navigator.geolocation.getCurrentPosition(function(position) {  
             var newPoint = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-                                                                                  
+            main.currentLocation = newPoint;                                                                   
             if (main.marker) {
                 // Marker already created - Move it
                 main.marker.setPosition(newPoint);
+                main.checkLocation(newPoint.lat() + ","+ newPoint.lng());
             }
             else {
                 // Marker does not exist - Create it
@@ -86,8 +88,8 @@ var main = {
                     map: main.map
                 });
             }
-            $('#long').text(position.coords.latitude.toFixed(7));
-            $('#lat').text(position.coords.longitude.toFixed(7));
+            //$('#long').text(position.coords.latitude.toFixed(7));
+            //$('#lat').text(position.coords.longitude.toFixed(7));
                 
             //console.log("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
             // Center the map on the new position
@@ -132,6 +134,8 @@ var main = {
                 var latlng =  new google.maps.LatLng(value.lat,value.lng);
                 main.markers.push(new google.maps.Marker({position: latlng,map:main.map,title:value.name}));
           });
+           var finalLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
+          main.renderPath(main.currentLocation,finalLocation);
         
     },
      generateHud: function(controlDiv, map) {
@@ -189,16 +193,19 @@ var main = {
         });
     },
     checkLocation : function(location){//Expecting coordinates lat long -79.484948 46.6198495
-      var finalLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
-      var currentLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-      if(main.distance(currentLocation,finalLocation) < 10){ //We Reached our location!
-          main.currentPosition+=1;
-          var newLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
-          main.renderPath(currentLocation,finalLocation);
-          //If our poisiton is maxxed then we are done!
-          if( main.currentPosition>=main.locations.length){
-              
-          }
+        if(main.locations.length > 0){
+        var finalLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
+
+        console.log("Checking distance:"+main.distance(main.currentLocation,finalLocation));
+        if(main.distance(main.currentLocation,finalLocation) < 25){ //We Reached our location!
+            main.currentPosition+=1;
+            var newLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
+            main.renderPath(main.currentLocation,newLocation);
+            //If our poisiton is maxxed then we are done!
+            if( main.currentPosition>=main.locations.length){
+
+            }
+        }
       }
     },
     distance : function(a,b){//Returns distance between two points, expects two latlng objects
