@@ -42,6 +42,7 @@
                         <div class="col-xs-12 fill-90" id="map-canvas"></div>
                         <div class="col-xs-12 fill-10">
                             <img id="pauseButton" class="" style="height:95%;padding:2.5%;" src="assets/img/pause.png"/></img>
+                            
                             <img id="infoButton" class=" pull-right" style="height:95%;padding:2.5%;"  src="assets/img/info.png"/></img>
                         </div>
                     </div>
@@ -68,6 +69,7 @@
                     <div class="col-xs-12 fill" style="display:none" id="infoPage">
                          <div class="text-center" style="font-size: 40px;">
                             <div id="infoSearch"></div>
+                            <div id="mp3Player"></div>
                         </div>
                     </div>
 
