@@ -364,6 +364,12 @@ function disableOther( button ) {
         classie.toggle( showRightPush, 'disabled' );
     }
 }
+
+function setProgressBar(value){
+    $( "#progressbar" ).progressbar( "option", {
+          value: Math.floor( value )
+        });
+}
 $(document).ready(function(){
     /*
 	function initialize() {
@@ -450,6 +456,7 @@ $(document).ready(function(){
     $( "#progressbar" ).progressbar({
         value: 25
     });
+  
            
     showLeft.onclick = function() {
         classie.toggle( this, 'active' );

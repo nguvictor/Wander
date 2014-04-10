@@ -52,7 +52,7 @@
                 <div id="content" class="row ">
                     <div class="col-xs-12 fill" style="padding:0px;display:none" id="mapPage">
                         <div class="col-xs-12 fill-90" id="map-canvas"></div>
-                        <div class="col-xs-12 fill-10 row text-center">
+                        <div class="col-xs-12 text-center" style="padding: 0px;">
                             <div class="col-xs-2" ><img id="pauseButton"  src="assets/img/pause.png"/></img></div>
                             <div class="col-xs-8" style="padding: 20px 0px;" ><div id="progressbar"></div></div>
                             <div class="col-xs-2 pull-right" ><img id="infoButton"  src="assets/img/info.png"/></img></div>
