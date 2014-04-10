@@ -107,3 +107,12 @@ html,body{height:100%;}
     height:20%;
     border: 1px solid red;
 }
+#pauseButton{
+    height: 75px;
+    padding: 10px;
+}
+
+#infoButton{
+    height: 75px;
+    padding: 10px;
+}

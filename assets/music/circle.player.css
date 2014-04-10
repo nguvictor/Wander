@@ -12,10 +12,9 @@
 
 .cp-container {
 	position:relative;
-	width:104px; /* 200 - (2 * 48) */
-	height:104px;
-       background:url("bgr.png") 0 0 no-repeat;
-        padding:48px;
+	
+       background:url("bgr.png") 65px 25px no-repeat;
+        padding:105px;
         -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
@@ -30,7 +29,6 @@ font-weight:bold;
 background:url("wanderBackground.jpg");
 } 
 
-
 .test{
   text-align: center; 
    color: white;
@@ -44,7 +42,7 @@ background:url("wanderBackground.jpg");
 	left:0;
 	width:104px;
 	height:104px;
-	clip:rect(0px,52px,104px,0px);
+	clip:rect(0px,0px,0px,0px);
 
 	-moz-border-radius:52px;
 	-webkit-border-radius:52px;
@@ -102,15 +100,14 @@ background:url("wanderBackground.jpg");
 }
 
 .cp-controls {
-	margin:0;
-	padding:26px;
+	
 }
 
 .cp-controls li{
 	list-style-type:none;
 	display:block;
 	/*IE Fix*/
-	position:absolute;
+	position:fixed;
 }
 
 .cp-controls li a{

@@ -41,7 +41,7 @@ var main = {
 
               
                 main.updateLocation();
-                main.map.setCenter(pos);
+                //main.map.setCenter(pos);
             }, function() {
                 main.handleNoGeolocation(true);
                           
@@ -225,6 +225,7 @@ var main = {
             $('#infoSearch').children().remove();
             var that = $('<div class="row" style="color:white;">'+main.locations[position].name+"<br><br>"+main.locations[position].description+'</div>');
             $('#infoSearch').append(that);
+            
         }
     }
 
@@ -438,8 +439,17 @@ $(document).ready(function(){
         disableOther( 'showLeft' );
     });
     
-    
-        
+         var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+    {
+                           m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+    oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"  
+   }, {
+    cssSelectorAncestor: "#cp_container_1"
+   });
+    //Progress Bar
+    $( "#progressbar" ).progressbar({
+        value: false
+    });
            
     showLeft.onclick = function() {
         classie.toggle( this, 'active' );
