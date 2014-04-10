@@ -61,6 +61,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="findPage">
+                        <h1 class="text-center">Search Tours</h1>
                         <div class="text-center" style="font-size: 40px;">
                             <form>
                                 <input type="text" size="15"  onkeyup="find(this.value)">
@@ -72,16 +73,19 @@
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="popularPage">
                          <div class="text-center" style="font-size: 40px;">
+                              <h1>Popular Tours</h1>
                             <div id="popularSearch"></div>
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="nearbyPage">
                          <div class="text-center" style="font-size: 40px;">
+                             <h1>Nearby Tours</h1>
                             <div id="nearbySearch"></div>
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="infoPage">
                          <div class="text-center" style="font-size: 40px;">
+                           <h1>Detailed Information</h1>
                             <div id="infoSearch"></div>
                                 <div id="mp3Player">
                                 
