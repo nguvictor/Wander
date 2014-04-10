@@ -9,14 +9,15 @@
 
    
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
+        
         <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="assets/music/circle.player.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
         
         <script type="text/javascript" src="assets/music/jquery.transform2d.js"></script>
         <script type="text/javascript" src="assets/music/jquery.grab.js"></script>

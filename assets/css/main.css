@@ -125,3 +125,11 @@ h1{
 .ui-progressbar .ui-progressbar-value{
     margin: 0px; 
 }
+
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited{
+    color:white;
+}
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+    text-shadow: none;
+}

@@ -42,7 +42,7 @@ var main = {
 
               
                 main.updateLocation();
-                //main.map.setCenter(pos);
+                main.map.setCenter(pos);
             }, function() {
                 main.handleNoGeolocation(true);
                           
@@ -58,18 +58,19 @@ var main = {
         if (errorFlag) {
             var content = 'Error: The Geolocation service failed.';
         } else {
-            var content = 'Error: Your browser doesn\'t support geolocation.';
+            var content = 'Error: Your device doesn\'t support geolocation.';
         }
-
+/*
         var options = {
             map: main.map,
             position: new google.maps.LatLng(60, 105),
             content: content
-        };
+        };*/
                 
-
-        var infowindow = new google.maps.InfoWindow(options);
-        main.map.setCenter(options.position);
+        alert(content);
+        setTimeout(main.accessGeolocation, 1000); //We will try again
+        //var infowindow = new google.maps.InfoWindow(options);
+        //main.map.setCenter(options.position);
                 
     },
     updateLocation : function() {
@@ -95,7 +96,7 @@ var main = {
                 
             //console.log("Wander: GPS Lat "+position.coords.latitude+" Long "+position.coords.longitude);
             // Center the map on the new position
-            main.map.setCenter(newPoint);
+            //main.map.setCenter(newPoint);
         }); 
         // Call the autoUpdate() function every 1 seconds
         setTimeout(main.updateLocation, 250);
@@ -204,9 +205,11 @@ var main = {
             var newLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
             main.renderPath(main.currentLocation,newLocation);
             //If our poisiton is maxxed then we are done! Should display facebook
-            setProgressBar( main.currentPosition/main.locations.length);
+            setProgressBar( main.currentPosition/main.locations.length * 100);
             if( main.currentPosition>=main.locations.length){
                 main.tourCompleted = true;
+            }else{//Pulsate!! We gots new info
+                $('#infoButton').effect("pulsate","slow",10000);
             }
         }
       }
