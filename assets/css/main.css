@@ -121,3 +121,7 @@ h1{
     color:white;
     font-size: 40px;
 }
+
+.ui-progressbar .ui-progressbar-value{
+    margin: 0px; 
+}

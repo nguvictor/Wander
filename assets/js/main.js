@@ -203,7 +203,8 @@ var main = {
             main.currentPosition+=1;
             var newLocation = new google.maps.LatLng(main.locations[main.currentPosition].lat,main.locations[main.currentPosition].lng);
             main.renderPath(main.currentLocation,newLocation);
-            //If our poisiton is maxxed then we are done!
+            //If our poisiton is maxxed then we are done! Should display facebook
+            setProgressBar( main.currentPosition/main.locations.length);
             if( main.currentPosition>=main.locations.length){
                 main.tourCompleted = true;
             }
@@ -221,6 +222,7 @@ var main = {
             }else{
                 var position = main.currentPosition-1;
             }
+            
             $("#content").children().hide();
             $('#infoPage').slideDown();
             $('#infoSearch').children().remove();
@@ -454,7 +456,7 @@ $(document).ready(function(){
    });
     //Progress Bar
     $( "#progressbar" ).progressbar({
-        value: 25
+        value: false
     });
   
            
