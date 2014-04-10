@@ -29,6 +29,7 @@ var main = {
         // Try HTML5 geolocation
                          
         main.accessGeolocation();
+        findPopular();
 		  
     },
     accessGeolocation: function(){
@@ -298,7 +299,6 @@ function findNearby(){
 
 function findPopular(){
     $('#popularSearch').children().remove();
-    console.log("working!");
     $.ajax({
         url: "./findPopular.php",
         data: {
@@ -448,7 +448,7 @@ $(document).ready(function(){
    });
     //Progress Bar
     $( "#progressbar" ).progressbar({
-        value: false
+        value: 25
     });
            
     showLeft.onclick = function() {

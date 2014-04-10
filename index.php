@@ -10,6 +10,7 @@
    
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
         <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
@@ -49,15 +50,12 @@
             </div>
             <div id="main" class="row fill">
                 <div id="content" class="row ">
-                    <div class="col-xs-12 fill" style="padding:0px;" id="mapPage">
+                    <div class="col-xs-12 fill" style="padding:0px;display:none" id="mapPage">
                         <div class="col-xs-12 fill-90" id="map-canvas"></div>
                         <div class="col-xs-12 fill-10 row text-center">
                             <div class="col-xs-2" ><img id="pauseButton"  src="assets/img/pause.png"/></img></div>
-                            <div class="col-xs-4" ><div id="progressbar"></div></div>
+                            <div class="col-xs-8" style="padding: 20px 0px;" ><div id="progressbar"></div></div>
                             <div class="col-xs-2 pull-right" ><img id="infoButton"  src="assets/img/info.png"/></img></div>
-                            
-                             
-                            
                         </div>
                     </div>
                     <div class="col-xs-12 fill" style="display:none" id="findPage">
@@ -71,7 +69,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-xs-12 fill" style="display:none" id="popularPage">
+                    <div class="col-xs-12 fill" id="popularPage">
                          <div class="text-center" style="font-size: 40px;">
                               <h1>Popular Tours</h1>
                             <div id="popularSearch"></div>
